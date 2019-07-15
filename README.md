@@ -19,11 +19,17 @@ Obtenemos tomcat de la página oficial https://tomcat.apache.org/download-90.cgi
 >NOTA: Para que este dockerfile funcione es necesario descargar el Tomcat 9 (apache-tomcat-9.0.22.tar.gz) desde la web de Oracle
 
 ## Fuentes
+
 https://fedoraproject.org/wiki/JDK_on_Fedora#Installing_Oracle_JDK_on_Fedora
+
 https://www.oracle.com/technetwork/java/javase/downloads/index.html
+
 https://tomcat.apache.org/download-90.cgi
 
 https://www.tecmint.com/install-java-in-fedora/
+
 https://unix.stackexchange.com/questions/423631/suppress-all-output-in-yum-except-for-errors
+
 https://stackoverflow.com/questions/10268583/downloading-java-jdk-on-linux-via-wget-is-shown-license-page-instead
+
 https://www.reddit.com/r/Fedora/comments/9t8eyr/nothing_provides_binbasename_in_fedora_29_while/
