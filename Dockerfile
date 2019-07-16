@@ -24,7 +24,7 @@ RUN sudo update-alternatives --set java /usr/local/java/jdk1.8.0_211/bin/java & 
 
 RUN source /etc/profile && source /etc/bashrc
 
-ENV JAVA_HOME /usr/local/java/jdk1.8.0_45
+ENV JAVA_HOME /usr/local/java/jdk1.8.0_211
 
 # Installing Tomcat 9
 
@@ -32,13 +32,14 @@ COPY apache-tomcat-9.0.22.tar.gz /tmp
 
 RUN mkdir -p /opt/tomcat
 
-RUN tar xvzf /tmp/apache-tomcat-9.0.22.tar.gz -C /opt/tomcat/ && rm /tmp/apache-tomcat-9.0.22.tar.gz
+RUN tar xvzf /tmp/apache-tomcat-9.0.22.tar.gz -C /opt/tomcat/ --strip-components 1
 
-ENV CATALINA_HOME /opt/tomcat/apache-tomcat-9.0.22
+ENV CATALINA_HOME /opt/tomcat
 
-RUN $CATALINA_HOME/bin/startup.sh
+WORKDIR /opt/tomcat/webapps
 
-EXPOSE 8080:8080
+RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
 
-#USER 10001
+EXPOSE 8080
 
+CMD ["/opt/tomcat/bin/catalina.sh", "run"]
