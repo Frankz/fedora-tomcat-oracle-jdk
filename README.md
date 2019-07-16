@@ -9,7 +9,7 @@ Para esto se utiliza la útima imagen oficial de Fedora en DockerHub "Fedora:30"
 Con los .tar.gz de Oracle JDK y Tomcat descargados en el directorio raíz para construir la imagen ejecutamos
 
 ```bash
-docker build -t fedora-oracle-jdk:2.0 .
+docker build -t fedora-tomcat-oracle-jdk:1.0 .
 ```
 
 Luego para poder utilizar la imagen creada ejecutar
